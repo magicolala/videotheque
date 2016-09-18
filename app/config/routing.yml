@@ -1,0 +1,18 @@
+ced_videotheque:
+    resource: "@CedVideothequeBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+_admin_genre:
+    resource: "@CedVideothequeBundle/Controller/GenreController.php"
+    type:     annotation
+    prefix:   /admin
+
+_admin_film:
+    resource: "@CedVideothequeBundle/Controller/FilmController.php"
+    type:     annotation
+    prefix:   /admin
+
+ced_videotheque_admin:
+    path: /admin
+    defaults: { _controller: CedVideothequeBundle:Admin:index}

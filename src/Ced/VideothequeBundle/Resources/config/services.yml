@@ -1,0 +1,4 @@
+services:
+#    ced_videotheque.example:
+#        class: Ced\VideothequeBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

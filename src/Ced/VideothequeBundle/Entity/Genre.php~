@@ -1,0 +1,71 @@
+<?php
+
+namespace Ced\VideothequeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Genre
+ *
+ * @ORM\Table(name="genre")
+ * @ORM\Entity(repositoryClass="Ced\VideothequeBundle\Repository\GenreRepository")
+ */
+class Genre
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * Bidirectional
+     *
+     * @ORM\ManyToMany(targetEntity="Film", mappedBy="listeDesGenres")
+     */
+    protected $listeDesFilms;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomLabel", type="string", length=255, nullable=true)
+     */
+    protected $nomLabel;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nomLabel
+     *
+     * @param string $nomLabel
+     * @return Genre
+     */
+    public function setNomLabel($nomLabel)
+    {
+        $this->nomLabel = $nomLabel;
+
+        return $this;
+    }
+
+    /**
+     * Get nomLabel
+     *
+     * @return string
+     */
+    public function getNomLabel()
+    {
+        return $this->nomLabel;
+    }
+}
